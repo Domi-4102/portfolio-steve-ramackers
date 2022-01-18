@@ -1,69 +1,57 @@
 .container {
   display: grid;
-  grid-template-columns: 0.4fr 2.2fr 0.4fr;
-  grid-template-rows: 0.1fr 1.9fr;
-  grid-auto-rows: 1fr;
+  grid-template-columns: 0.4fr 1.8fr 0.4fr;
+  grid-template-rows: 0.1fr 1fr;
   gap: 0px 0px;
-  grid-auto-flow: row;
   grid-template-areas:
-    "HEADER HEADER HEADER"
-    "side-left CONTENT SIDE-RIGHT";
-  min-height: 100vh;
+    "header header header"
+    "social-nav content email";
+  height: 100vh;
 }
+.content {
+  grid-area: content;
+  margin: 0px auto;
+    padding: 100px 0px;
+    max-width: 1000px;
+    @media (max-width: 768px)
+    section {
+        padding: 80px 0px;
+    }
+    
+}
+.social-nav {
+  justify-self: center;
+  align-self: end;
+  grid-area: social-nav;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  position: sticky;
+  bottom: 0;
+  z-index: 11;
+}
+.email {
+  justify-self: center;
+  align-self: end;
+  grid-area: email;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  text-decoration: none;
+  position: sticky;
+  bottom: 0;
+  z-index: 11;
 
-.HEADER {
+}
+.header {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
-  padding: 0 50px;
   gap: 0px 0px;
-  grid-auto-flow: column;
-  justify-self: stretch;
-  align-self: stretch;
+  grid-template-areas: "navbar navbar navbar";
+  grid-area: header;
+  background-color: rgba(10, 25, 47, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 0 50px;
   position: sticky;
   top: 0;
   z-index: 11;
-  grid-area: HEADER;
-  background-color: rgba(10, 25, 47, 0.85);
-  backdrop-filter: blur(8px);
-}
-
-.side-left {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  justify-items: start;
-  grid-template-areas: "social-nav";
-  justify-self: stretch;
-  align-self: stretch;
-  grid-area: side-left;
-  min-height: inherit;
-}
-
-.CONTENT {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: ".";
-  grid-area: CONTENT;
-  padding: 100px 0;
-  min-height: inherit;
-  text-decoration: none;
-  
-}
-
-.SIDE-RIGHT {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  justify-items: end;
-  grid-template-areas: "email-link";
-  grid-area: SIDE-RIGHT;
-  min-height: inherit;
 }

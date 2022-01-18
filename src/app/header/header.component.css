@@ -1,0 +1,16 @@
+.logo {
+    justify-self: start; 
+    align-self: center; 
+    grid-area: logo; 
+    width: 60px; 
+    height: 60px; 
+    background-color: chartreuse;
+  }
+  .nav-styled {
+    justify-self: end; 
+    align-self: center; 
+    grid-area: nav-styled; 
+    width: 500px; 
+    height: auto; 
+    background-color: chartreuse;
+  }
